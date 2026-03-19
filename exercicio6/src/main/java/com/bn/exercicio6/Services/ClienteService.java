@@ -22,7 +22,7 @@ public class ClienteService {
     }
 
     public void deletarCliente(Long id){
-        clienteRepository.findById(id);
+        clienteRepository.deleteById(id);
     }
 
     public ClienteModel buscarClientePorId(Long id){
