@@ -19,13 +19,14 @@ public class ClienteController {
 
     @GetMapping
     public ResponseEntity<List<ClienteModel>> findAll(){
-        List<ClienteModel> cliente = clienteService.findAll();
-        return ResponseEntity.ok().body(cliente);
+        List<ClienteModel> clientes = clienteService.findAll();
+        return ResponseEntity.ok().body(clientes);
     }
 
     @GetMapping("/{id}")
-    public ClienteModel buscarClientePorId(@PathVariable Long id){
-        return clienteService.buscarClientePorId(id);
+    public ResponseEntity<ClienteModel> buscarClientePorId(@PathVariable Long id){
+        ClienteModel cliente = clienteService.buscarClientePorId(id);
+        return ResponseEntity.ok(cliente);
     }
 
     @PostMapping
